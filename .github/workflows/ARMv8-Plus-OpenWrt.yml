@@ -9,9 +9,17 @@
 name: ARMv8 Plus OpenWrt
 
 on:
+  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 20 * * *
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+
+
+  #schedule:
+  #  - cron: 0 20 * * *
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
